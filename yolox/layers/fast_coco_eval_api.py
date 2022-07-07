@@ -75,7 +75,7 @@ class COCOeval_opt(COCOeval):
             for instance in instances:
                 print(instance.keys())
                 print(instance["bbox"])
-                area = np.absolute(instance["bbox"][0] - instance["bbox"][2]) * np.absolute(instance["bbox"[1] - instance["bbox"][3]) 
+                area = np.absolute(instance["bbox"][0] - instance["bbox"][2]) * np.absolute(instance["bbox"][1] - instance["bbox"][3]) 
                 instance_cpp = self.module.InstanceAnnotation(
                     int(instance["id"]),
                     instance["score"] if is_det else instance.get("score", 0.0),
