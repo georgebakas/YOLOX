@@ -40,8 +40,8 @@ class COCODataset(Dataset):
     def __init__(
         self,
         data_dir=None,
-        json_file="instances_train2017.json",
-        name="train2017",
+        json_file="coco.json",
+        name="images/training",
         img_size=(416, 416),
         preproc=None,
         cache=False,
@@ -58,9 +58,11 @@ class COCODataset(Dataset):
         super().__init__(img_size)
         if data_dir is None:
             data_dir = os.path.join(get_yolox_datadir(), "COCO")
+        
         self.data_dir = data_dir
         self.json_file = json_file
-
+        print('DATA DIR', data_dir)
+        print('JSON', json_file)
         self.coco = COCO(os.path.join(self.data_dir, "annotations", self.json_file))
         remove_useless_info(self.coco)
         self.ids = self.coco.getImgIds()
@@ -145,7 +147,8 @@ class COCODataset(Dataset):
             y1 = np.max((0, obj["bbox"][1]))
             x2 = np.min((width, x1 + np.max((0, obj["bbox"][2]))))
             y2 = np.min((height, y1 + np.max((0, obj["bbox"][3]))))
-            if obj["area"] > 0 and x2 >= x1 and y2 >= y1:
+            area = np.absolute(x2-x1) * np.absolute(y2-y1)
+            if area > 0 and x2 >= x1 and y2 >= y1:
                 obj["clean_bbox"] = [x1, y1, x2, y2]
                 objs.append(obj)
 
