@@ -39,11 +39,11 @@ class Exp(BaseExp):
         # dir of dataset images, if data_dir is None, this project will use `datasets` dir
         self.data_dir = None
         # name of annotation file for training
-        self.train_ann = "instances_train2017.json"
+        self.train_ann = "coco.json"
         # name of annotation file for evaluation
-        self.val_ann = "instances_val2017.json"
+        self.val_ann = "coco.json"
         # name of annotation file for testing
-        self.test_ann = "instances_test2017.json"
+        self.test_ann = "coco.json"
 
         # --------------- transform config ----------------- #
         # prob of applying mosaic aug
@@ -243,8 +243,13 @@ class Exp(BaseExp):
                 elif hasattr(v, "weight") and isinstance(v.weight, nn.Parameter):
                     pg1.append(v.weight)  # apply decay
 
-            optimizer = torch.optim.SGD(
-                pg0, lr=lr, momentum=self.momentum, nesterov=True
+            #optimizer = torch.optim.SGD(
+            #    pg0, lr=lr, momentum=self.momentum, nesterov=True
+            #)
+            optimizer = torch.optim.AdamW(
+                pg0, 
+                lr=lr, 
+                weight_decay=self.weight_decay
             )
             optimizer.add_param_group(
                 {"params": pg1, "weight_decay": self.weight_decay}

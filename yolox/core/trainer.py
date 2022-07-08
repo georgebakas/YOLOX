@@ -342,7 +342,7 @@ class Trainer:
                     "val/COCOAP50_95": ap50_95,
                     "train/epoch": self.epoch + 1,
                 })
-                self.wandb_logger.log_images(predictions)
+                #self.wandb_logger.log_images(predictions)
             logger.info("\n" + summary)
         synchronize()
 
