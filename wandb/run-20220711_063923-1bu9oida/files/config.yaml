@@ -47,13 +47,18 @@ _wandb:
       6:
       - 1
     python_version: 3.8.0
-    start_time: 1657286027
+    start_time: 1657521563
     t:
       1:
       - 1
       - 41
       - 55
+      2:
+      - 1
+      - 41
+      - 55
       3:
+      - 2
       - 7
       4: 3.8.0
       5: 0.12.21
@@ -64,7 +69,7 @@ act:
   value: silu
 basic_lr_per_img:
   desc: null
-  value: 0.00015625
+  value: 0.005
 data_dir:
   desc: null
   value: datasets
@@ -73,7 +78,7 @@ data_num_workers:
   value: 4
 dataset:
   desc: null
-  value: <yolox.data.datasets.mosaicdetection.MosaicDetection object at 0x7f69ca7b3c40>
+  value: <yolox.data.datasets.mosaicdetection.MosaicDetection object at 0x7fd8cd6d7a00>
 degrees:
   desc: null
   value: 10.0
@@ -91,7 +96,7 @@ eval_interval:
   value: 10
 exp_name:
   desc: null
-  value: bio-tiny66
+  value: bio-tiny12
 flip_prob:
   desc: null
   value: 0.5
@@ -105,7 +110,7 @@ input_size:
   - 416
 max_epoch:
   desc: null
-  value: 300
+  value: 600
 min_lr_ratio:
   desc: null
   value: 0.05
@@ -546,12 +551,12 @@ optimizer:
   desc: null
   value: "AdamW (\nParameter Group 0\n    amsgrad: False\n    betas: (0.9, 0.999)\n\
     \    capturable: False\n    eps: 1e-08\n    foreach: None\n    lr: 0\n    maximize:\
-    \ False\n    weight_decay: 0.0005\n\nParameter Group 1\n    amsgrad: False\n \
-    \   betas: (0.9, 0.999)\n    capturable: False\n    eps: 1e-08\n    foreach: None\n\
-    \    lr: 0\n    maximize: False\n    weight_decay: 0.0005\n\nParameter Group 2\n\
+    \ False\n    weight_decay: 5e-05\n\nParameter Group 1\n    amsgrad: False\n  \
+    \  betas: (0.9, 0.999)\n    capturable: False\n    eps: 1e-08\n    foreach: None\n\
+    \    lr: 0\n    maximize: False\n    weight_decay: 5e-05\n\nParameter Group 2\n\
     \    amsgrad: False\n    betas: (0.9, 0.999)\n    capturable: False\n    eps:\
     \ 1e-08\n    foreach: None\n    lr: 0\n    maximize: False\n    weight_decay:\
-    \ 0.0005\n)"
+    \ 5e-05\n)"
 output_dir:
   desc: null
   value: ./YOLOX_outputs
@@ -606,7 +611,7 @@ warmup_lr:
   value: 0
 weight_decay:
   desc: null
-  value: 0.0005
+  value: 5.0e-05
 width:
   desc: null
   value: 0.25

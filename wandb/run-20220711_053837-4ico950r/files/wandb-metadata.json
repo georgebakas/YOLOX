@@ -1,0 +1,39 @@
+{
+    "os": "Linux-4.14.281-212.502.amzn2.x86_64-x86_64-with-glibc2.10",
+    "python": "3.8.0",
+    "heartbeatAt": "2022-07-11T05:38:38.115835",
+    "startedAt": "2022-07-11T05:38:37.220344",
+    "docker": null,
+    "gpu": "Tesla T4",
+    "gpu_count": 1,
+    "cpu_count": 4,
+    "cuda": null,
+    "args": [
+        "-f",
+        "exps/example/custom/bio-tiny.py",
+        "-d",
+        "1",
+        "-b",
+        "2",
+        "--fp16",
+        "-o",
+        "-c",
+        "weights/yolox_m.pth",
+        "--logger",
+        "wandb",
+        "wandb-project",
+        "yolox"
+    ],
+    "state": "running",
+    "program": "tools/train.py",
+    "codePath": "tools/train.py",
+    "git": {
+        "remote": "https://github.com/georgebakas/YOLOX.git",
+        "commit": "d34f8f777c6257f6c4b0e364908114fdc77d1371"
+    },
+    "email": "gbakas@innovation-res.eu",
+    "root": "/home/studio-lab-user/YOLOX",
+    "host": "default",
+    "username": "studio-lab-user",
+    "executable": "/home/studio-lab-user/.conda/envs/yolox/bin/python"
+}

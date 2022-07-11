@@ -47,7 +47,7 @@ _wandb:
       6:
       - 1
     python_version: 3.8.0
-    start_time: 1657286027
+    start_time: 1657518503
     t:
       1:
       - 1
@@ -64,7 +64,7 @@ act:
   value: silu
 basic_lr_per_img:
   desc: null
-  value: 0.00015625
+  value: 0.005
 data_dir:
   desc: null
   value: datasets
@@ -73,7 +73,7 @@ data_num_workers:
   value: 4
 dataset:
   desc: null
-  value: <yolox.data.datasets.mosaicdetection.MosaicDetection object at 0x7f69ca7b3c40>
+  value: <yolox.data.datasets.mosaicdetection.MosaicDetection object at 0x7feb747c1d30>
 degrees:
   desc: null
   value: 10.0
@@ -91,7 +91,7 @@ eval_interval:
   value: 10
 exp_name:
   desc: null
-  value: bio-tiny66
+  value: bio-tiny98
 flip_prob:
   desc: null
   value: 0.5
